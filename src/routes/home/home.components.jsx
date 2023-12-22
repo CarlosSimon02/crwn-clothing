@@ -33,7 +33,6 @@ const Home = () => {
 
   return (
     <div className="home-container">
-      <Outlet></Outlet>
       {categories.map((category) => {
         return (
           <CategoryItem
