@@ -9,15 +9,15 @@ function App() {
       title: "Jackets",
     },
     {
-      id: 1,
+      id: 3,
       title: "Sneakers",
     },
     {
-      id: 1,
+      id: 4,
       title: "Womens",
     },
     {
-      id: 1,
+      id: 5,
       title: "Mens",
     },
   ];
@@ -27,6 +27,7 @@ function App() {
       {categories.map(({ id, title }) => {
         return (
           <div key={id} className="category-container">
+            <div className="background-image" />
             <div className="category-body-container">
               <h2>{title}</h2>
               <p>Shop Now</p>
