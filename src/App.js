@@ -1,8 +1,8 @@
-import Categories from "./components/categories/categories.component";
+import Directory from "./components/directory/directory.component";
 
 function App() {
   return (
-    <Categories />
+    <Directory />
   );
 }
 
