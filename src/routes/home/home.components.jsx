@@ -1,4 +1,3 @@
-import { Outlet } from "react-router-dom";
 import CategoryItem from "../../components/category-item/category-item.component";
 import "./home.styles.scss";
 
