@@ -1,10 +1,13 @@
 import { Outlet, Link } from "react-router-dom";
-import { Fragment } from "react";
+import { Fragment, useContext } from "react";
 import "./navigation-bar.styles.scss";
 
 import { ReactComponent as CrwnLogo } from "../../assets/crown.svg";
+import { UserContext } from "../../context/user.context";
 
 const NavigationBar = () => {
+  const { currentUser } = useContext(UserContext);
+  console.log({currentUser});
   return (
     <Fragment>
       <div className="navigation-bar">
