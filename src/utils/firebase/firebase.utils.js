@@ -11,15 +11,6 @@ import {
 } from "firebase/auth";
 import { getFirestore, doc, getDoc, setDoc } from "firebase/firestore";
 
-// const firebaseConfig = {
-//   apiKey: "AIzaSyDDU4V-_QV3M8GyhC9SVieRTDM4dbiT0Yk",
-//   authDomain: "crwn-clothing-db-98d4d.firebaseapp.com",
-//   projectId: "crwn-clothing-db-98d4d",
-//   storageBucket: "crwn-clothing-db-98d4d.appspot.com",
-//   messagingSenderId: "626766232035",
-//   appId: "1:626766232035:web:506621582dab103a4d08d6",
-// };
-
 const firebaseConfig = {
   apiKey: "AIzaSyAV0vOKKWh6c5z7Up9nkla65k_XD73Eza8",
   authDomain: "sample-db-cd296.firebaseapp.com",
@@ -67,7 +58,16 @@ export const createUserDocumentFromAuth = async (
         ...additionalInformation,
       });
     } catch (error) {
-      console.log("error creating the user", error.message);
+      switch (error.code) {
+        case 'auth/wrong-password':
+          alert('incorrect password for email');
+          break;
+        case 'auth/user-not-found':
+          alert('no user associated with this email');
+          break;
+        default:
+          console.log(error);
+      }
     }
   }
 
