@@ -1,7 +1,5 @@
 import { useState } from "react";
-label="Display Name"/form-FormInput
-label="Display Name".component";
-
+import FormInput from "../form-input/form-input.component";
 import {
   createAuthUserWithEmailAndPassword,
   createUserDocumentFromAuth,
@@ -82,6 +80,7 @@ const SignUpForm = () => {
           name="password"
           onChange={handleChange}
           value={password}
+          
         />
         <FormInput
         label="Confirm Password"
