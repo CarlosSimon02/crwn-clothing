@@ -1,6 +1,6 @@
 import { createContext, useState } from "react";
 
-const AddCartItem = (cartItems, productToAdd) => {
+const addCartItem = (cartItems, productToAdd) => {
   //find if productToAdd exist in cartItems
   const existingCartItem = cartItems.find(
     (cartItem) => cartItem.id === productToAdd.id
@@ -30,6 +30,10 @@ export const CartProvider = ({ children }) => {
   const [isCartOpen, setCartIsOpen] = useState(false);
   const [cartItems, setCartItems] = useState([]);
   const value = { isCartOpen, setCartIsOpen };
+
+  const addItemToCart = (productToAdd) => {
+    setCartItems(addCartItem(cartItems,productToAdd))
+  }
 
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
 };
