@@ -5,10 +5,11 @@ import "./navigation-bar.styles.scss";
 import { ReactComponent as CrwnLogo } from "../../assets/crown.svg";
 import { UserContext } from "../../context/user.context";
 import { signOutUser } from "../../utils/firebase/firebase.utils";
+import CartIcon from "../../components/cart-icon/cart-icon.component";
 
 const NavigationBar = () => {
-  const { currentUser} = useContext(UserContext);
-  
+  const { currentUser } = useContext(UserContext);
+
   return (
     <Fragment>
       <div className="navigation-bar">
@@ -24,8 +25,9 @@ const NavigationBar = () => {
           ) : (
             <Link className="nav-link" to="/auth">
               SIGN IN
-            </Link> 
+            </Link>
           )}
+          <CartIcon/>
         </div>
       </div>
       <Outlet />
