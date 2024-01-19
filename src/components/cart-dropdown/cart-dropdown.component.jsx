@@ -1,8 +1,12 @@
+import Button from "../button/button.cmponent"
 import "./cart-dropdown.styles.scss";
 
 const CartDropdown = () => {
   return (
-    <div className="cart-dropdown-container"></div>
+    <div className="cart-dropdown-container">
+      <div className="cart-items"></div>
+      <Button>Go to Checkout</Button>
+    </div>
   )
 }
 
