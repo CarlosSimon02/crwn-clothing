@@ -8,6 +8,17 @@ const Checkout = () => {
 
   return (
     <div>
+      <div className="checkout-container">
+        {["Product", "Description", "Quantity", "Product", "Remove"].map(
+          (label) => {
+            return (
+              <div className="header-block">
+                <span>{label}</span>
+              </div>
+            );
+          }
+        )}
+      </div>
       {cartItems.map((cartItem) => {
         const { name, quantity, price } = cartItem;
         return (
