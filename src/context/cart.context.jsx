@@ -48,14 +48,19 @@ export const CartProvider = ({ children }) => {
   const [isCartOpen, setCartIsOpen] = useState(false);
   const [cartItems, setCartItems] = useState([]);
   const [cartCount, setCartCount] = useState(0);
+  const [totalPrice, setTotalPrice] = useState(0);
 
   useEffect(() => {
     const totalCartItems = cartItems.reduce(
-      (accumulator, cartItem) => accumulator + cartItem.quantity,
+      (total, cartItem) => total + cartItem.quantity,
       0
     );
-
     setCartCount(totalCartItems);
+
+    const totalPriceOfItems = cartItems.reduce(
+      (total, cartItems) => total + cartItems.quantity * cartItems.price
+    );
+    setTotalPrice(totalPriceOfItems);
   }, [cartItems]);
 
   const addItemToCart = (productToAdd) => {
