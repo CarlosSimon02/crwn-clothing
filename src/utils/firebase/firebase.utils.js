@@ -19,12 +19,12 @@ import {
 } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAV0vOKKWh6c5z7Up9nkla65k_XD73Eza8",
-  authDomain: "sample-db-cd296.firebaseapp.com",
-  projectId: "sample-db-cd296",
-  storageBucket: "sample-db-cd296.appspot.com",
-  messagingSenderId: "955790321744",
-  appId: "1:955790321744:web:5d46b496f2f46d82160955",
+  apiKey: "AIzaSyBckMBSBjYJrL5AB4WJAUWpUhuhSGqAMGY",
+  authDomain: "crwn-clothing-db-b50c7.firebaseapp.com",
+  projectId: "crwn-clothing-db-b50c7",
+  storageBucket: "crwn-clothing-db-b50c7.appspot.com",
+  messagingSenderId: "249228855483",
+  appId: "1:249228855483:web:008478f9993fae845dc19e",
 };
 
 const firebaseApp = initializeApp(firebaseConfig);
@@ -58,6 +58,10 @@ export const addCollectionAndDocuments = async (
   await batch.commit();
   console.log("done");
 };
+
+export const getCategoriesAndDocuments = async () => {
+  const collectionRef = collection(db,'categories')
+}
 
 export const createUserDocumentFromAuth = async (
   userAuth,
