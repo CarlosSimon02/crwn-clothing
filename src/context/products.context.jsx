@@ -2,20 +2,20 @@ import { createContext, useState, useEffect } from "react";
 import SHOP_DATA from "../shop-data.js";
 import { addCollectionAndDocuments,getCategoriesAndDocuments } from "../utils/firebase/firebase.utils.js";
 
-export const ProductContext = createContext({
+export const CategoriesContext = createContext({
   products: [],
 });
 
-export const ProductProvider = ({ children }) => {
+export const CategoriesProvider = ({ children }) => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    const getCategoryMap = async () => {
-      const categoryMap = getCategoriesAndDocuments();
-      console.log(categoryMap);
+    const getCategoriesMap = async () => {
+      const categoriesMap = getCategoriesAndDocuments();
+      console.log(categoriesMap);
     }
 
-    getCategoryMap();
+    getCategoriesMap();
   },[])
 
   // JUST DO ONE TIME
@@ -25,6 +25,7 @@ export const ProductProvider = ({ children }) => {
   
   const value = { products };
   return (
-    <ProductContext.Provider value={value}>{children}</ProductContext.Provider>
+    <CategoriesContext.Provider value={value}>{children}</CategoriesContext.Provider>
   );
 };
+1
