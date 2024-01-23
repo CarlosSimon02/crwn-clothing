@@ -2,7 +2,6 @@ import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { CartContext } from "../../context/cart.context";
 import CartItem from "../cart-item/cart-item.component";
-import "./cart-dropdown.styles.jsx";
 
 import {
   CartDropDownContainer,

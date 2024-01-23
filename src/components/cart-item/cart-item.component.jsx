@@ -1,5 +1,3 @@
-import "./cart-item.styles.jsx";
-
 import {
   CartItemContainer,
   Image,
